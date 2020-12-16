@@ -14,7 +14,7 @@ class RedirectMiddleware
     public function handle(Request $request, Closure $next)
     {
         $config = config('redirector');
-        $url = trim($request->getPathInfo(), '/');
+        $url = rtrim($request->getPathInfo(), '/');
 
         if ($config['cache']) {
 
