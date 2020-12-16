@@ -29,7 +29,7 @@ class RedirectMiddleware
                  * Trimming result to the same state as after the query.
                  * @see Redirect::scopeWhereUrl()
                  */
-                return !preg_match("#^$url(\?.*)?$#", $redirect->from_url);
+                return !preg_match("#^$url(\?.*)?$#i", $redirect->from_url);
             });
         } else {
             $redirects = Redirect::whereUrl($url)->get();
