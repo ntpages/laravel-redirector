@@ -17,6 +17,7 @@ class RedirectMiddleware
         $url = rtrim($request->getPathInfo(), '/');
 
         if ($config['cache']) {
+            $url = preg_quote($url);
 
             // todo:    extra cache layer can be added to avoid the check every time
             //          store url if redirected the time that main cache key have left
